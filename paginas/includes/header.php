@@ -1,13 +1,13 @@
 <nav id="mobile">
 	<ul>
 		<fieldset>MENU</fieldset>
-		<li><a href="" class="first">Comércio</a></li>
-		<li><a href="#">Moda</a></li>
-		<li><a href="#">Saúde</a></li>
-		<li><a href="#">Serviços</a></li>
-		<li><a href="">Entretenimento</a></li>
-		<li><a href="">Alimentação</a></li>
+		<li><a href="index.php" title="Home">Home</a></li>
+		<li><a href="contato.php" title="Contato">Contato</a></li>
+		<li><a href="planos.php" title="Planos">Planos</a></li>
+		<li><a href="sobre.php" title="Sobre Nós">Sobre Nós</a></li>
+		<li><a href="" title="Join Us">Junte-se a nos</a></li>
 	</ul>
+</ul>
 </nav>
 <div class="header">
 	
