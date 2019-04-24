@@ -1,0 +1,168 @@
+#header
+  @extend %back-transparent
+  @extend %p-absolute
+  width: 100%
+  z-index: 2
+.cont-header
+  margin-bottom: 0
+  padding-top: 41px
+  nav, ul
+    @extend %flex-box  
+    justify-content: flex-end 
+    @include tablet-mini
+      display: none 
+    li
+      text-transform: uppercase
+      letter-spacing: 2px
+      margin: 0 15px 
+      @include transition(1s)
+      font:
+        size: 14px
+        weight: 600
+      a
+        @extend %color-branco
+        line-height: 60px
+        border-bottom: 3px solid transparent 
+        @include transition(all .5s ease)
+        &:after
+          content: ''
+          display: block
+          width: 0
+          height: 3px
+          @extend %back-roxo
+          @include transition(.4s)
+        &:hover
+          text-decoration: none
+          &:after
+            width: 100%    
+.login-icon
+  @extend %pointer
+  margin: 11px 0 0 20px
+  border: none
+  @extend %back-transparent
+  @extend %color-branco
+  @include transition(1s)
+  &:focus
+    outline: none
+  &:before
+    content: '\f007'
+    font:
+      family: "Font Awesome 5 Free" 
+      weight: 900
+      size: 20px  
+.logo
+  @include tablet
+    margin-left: 30px      
+/*icone barra de pesquisa*/
+.icons
+  @extend %flex-box
+  justify-content: flex-end 
+  z-index: 2
+
+.pesq-icon
+  padding: 11px 10px
+  @extend %pointer
+  border: none
+  @extend %back-transparent
+  @extend %color-branco
+  @include transition(1s)
+  &:focus
+    outline: none
+  &:before
+    content: '\f002'
+    font:
+      family: "Font Awesome 5 Free" 
+      weight: 900
+      size: 20px       
+
+.pesq-icon.close 
+  padding: 11px 0 0 50px    
+  &:before
+    @include transition(1s)
+    content: '\f00d'
+    @extend %color-branco
+    font:
+       family: "Font Awesome 5 Free" 
+       weight: 900
+       size: 20px
+
+.search-box
+  @extend %p-fixed
+  right: 200px
+  top: 60px
+  width: 0
+  z-index: 5
+  @include full-hd
+    right: 470px  
+  @include tablet
+    right: 120px 
+  border-bottom: 1.5px solid #fff
+  @include transition (all 1s) 
+  .search-input
+    border: 0
+    width: 100% 
+    @extend %color-branco
+    @extend %back-transparent
+    &:focus
+      outline: none
+  @include placeholder 
+    color: #fff
+    font-weight: 400
+      
+.search-box.exibir
+  width: 65%
+  @include tablet
+    width: 70%
+  @include full-hd
+    width: 45%   
+  opacity: 1  
+
+#header.down
+  background: rgba(0,0,0,.8)
+  border-bottom: 1px solid #f9f9f9
+  @include box-shadow(0 2px 6px rgba(0,0,0,0.3))
+  padding: 5px 0 5px 0
+  @extend %p-fixed
+  width: 100%
+  z-index: 9999
+  @include transition(all .6s)
+  @include animacao( nav-down 0.7s)
+  .menu
+    top: 10px
+  .logo
+    img
+      width: 5rem
+  .cont-header
+    padding-top: 7px
+    a, button
+      color: #9657d6 !important
+      line-height: 30px    
+    @include celular
+      padding: 14px  
+  .search-box 
+    border-color: #9657d6
+    top: 20px
+    .search-input
+      @extend %color-roxo 
+    @include placeholder
+      color: #9657d6
+  .pesq-icon, .login-icon
+    padding-top: 0 
+    margin-top: 0   
+  .pesq-icon.close    
+    &:before
+      @extend %color-roxo
+  @include keyframe( nav-down )
+    0%
+      @include transform(translateY(-100%))
+    100%
+      @include transform(translateY(0))        
+#navbar.sumir   
+  ul
+    li
+      opacity: 0
+      @include transition(all .4s) 
+      &:nth-child(even)
+        @include transform(translateY(-100%))
+      &:nth-child(odd)
+        @include transform(translateY(100%))  

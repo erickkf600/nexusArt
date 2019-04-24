@@ -1,0 +1,44 @@
+#sobre 
+  @extend %p-relative
+  padding: 4.2rem 0 12rem
+  min-height: 696px
+  text-align: center
+  max-width: 850px
+  display: block
+  margin: 0 auto    
+  h1
+    @extend %moteserrat
+    @extend %color-roxo
+    line-height: 1.667
+    text-transform: uppercase
+    letter-spacing: .3rem
+    font:
+      size: 2.2rem
+      weight: bold
+    &:before
+      display: block
+      content: ""
+      width: 3px
+      height: 9.6rem
+      background-color: rgba(149, 149, 149, 0.7)
+      margin: 0 auto 2.4rem 
+  span
+    @extend %color-roxo
+    @extend %moteserrat
+    font:
+      size: 40px
+      weight: bold
+    @include celular-xs 
+      font-size: 30px       
+  p
+    font-size: 35px
+    @extend %bree-serif
+    letter-spacing: 1.2px
+    color: #2e383f 
+    margin-top: 4rem 
+    @include celular-md
+      font-size: 25px  
+    @include celular-xs 
+      font-size: 18px     
+
+    

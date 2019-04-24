@@ -1,0 +1,117 @@
+//BOTÃO
+.menu
+  width: 50px
+  height: 50px
+  @extend %p-fixed
+  left: 1%
+  z-index: 4
+  top: 41px
+  display: none
+  @include tablet-mini
+    display: block
+  span
+    margin-top: 9px
+    margin-bottom: 9px
+    top: 50%
+    left: 50%
+    margin-left: -15px
+    z-index: 90
+.menu span, .menu span::before, .menu span::after
+  @extend %p-absolute
+  content: ""
+  display: block
+  width: 26px
+  right: 0
+  height: 3px
+  z-index: 90
+  @extend %back-roxo
+  outline: 1px solid transparent
+  @include transition(.3s)
+.menu span::before
+  top: -9px
+  width:20px
+.menu span::after
+  top: 9px 
+  width: 33px
+.menu.clicked 
+  span
+    @extend %back-transparent
+    &::before
+      @include transform(translateY(9px) rotate(45deg))
+      width: 33px
+    &::after
+       @include transform(translateY(-9px) rotate(-45deg))
+    &:before, &:after
+      background: #fff
+.menu:hover
+  @extend %pointer 
+/*  SIDENAV 
+ * ========================================== */     
+#mobile 
+  @extend %back-roxo
+  @extend %p-fixed
+  z-index: 3
+  top: 0
+  left: 0
+  height: 100%
+  max-width: 260px 
+  width: 100%
+  padding: 120px 30px 70px 20px
+  @include transform(translateX(-100%))
+  @include transition(transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86))
+  fieldset
+    border: 1px solid #fff
+    margin: 0 auto
+    pointer-events: none
+    @extend %color-branco
+    cursor: default
+    text-align: center
+    line-height: 45px
+    font:
+      weight: 600
+      size: 20px
+  ul 
+    list-style: none  
+    li 
+      @include transform(translateX(40px))
+      opacity: 0
+      @include transition(all .3s ease)
+      float: none
+      list-style: circle
+      @extend %color-branco
+      a
+        @extend %color-branco
+        @extend %p-relative
+        font-size: 1.3rem
+        display: block
+        padding: 10px 0
+        @include transition(all .3s ease)
+        text:
+          decoration: none
+          transform: uppercase
+        &:hover
+          color: #b7ac7f  
+  @include full-hd
+    max-width: 400px
+    padding: 150px 30px 70px 50px  
+
+#mobile.show 
+  @include transform(translateX(0px))
+  ul
+    li 
+      @include transform(translateX(0px))
+      opacity: 1
+      &:nth-child(1)
+        transition-delay: 0.15s
+      &:nth-child(2)
+        transition-delay: 0.3s
+      &:nth-child(3)
+        transition-delay: 0.45s
+      &:nth-child(4)
+        transition-delay: 0.6s
+      &:nth-child(5)
+        transition-delay: 0.75s
+      &:nth-child(6)
+        transition-delay: 0.9s
+      &:nth-child(7) 
+        transition-delay: 1.05s

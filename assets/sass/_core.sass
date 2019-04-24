@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans|Bree+Serif|Montserrat')
+/*MIXINS*/
+@mixin transition($transicao) 
+  -webkit-transition: $transicao
+  -moz-transition: $transicao
+  -ms-transition: $transicao
+  -o-transition: $transicao
+  transition: $transicao
+
+@mixin transform($transform) 
+  -webkit-transform: ($transform)
+  -moz-transform: ($transform)
+  -ms-transform: ($transform)
+  -o-transform: ($transform)
+  transform: ($transform)
+@mixin box-shadow($shadow)
+  -webkit-box-shadow: $shadow
+  -moz-box-shadow: $shadow
+  -ms-box-shadow: $shadow
+  box-shadow: $shadow
+
+
+@mixin back($escolha)
+  background: $escolha
+  background-repeat: no-repeat
+  background-size: cover
+@mixin placeholder 
+  ::-webkit-input-placeholder 
+    @content
+  :-moz-placeholder         
+    @content
+  ::-moz-placeholder          
+    @content
+  :-ms-input-placeholder      
+    @content  
+//ANIMAÇÃO
+@mixin animacao($anime) 
+  -webkit-animation: $anime
+  -moz-animation: $anime
+  -ms-animation: $anime
+  animation: $anime
+@mixin keyframe($movimento) 
+  @-webkit-keyframes #{$movimento}
+    @content
+  @-moz-keyframes #{$movimento}
+    @content
+  @-o-keyframes #{$movimento}
+    @content
+//Media Queries
+@mixin full-hd
+  @media screen and (min-width:1920px)
+    @content
+@mixin tablet
+  @media screen and (max-width:1024px)
+    @content
+@mixin tablet-mini
+  @media screen and (max-width:768px)
+    @content 
+@mixin celular
+  @media screen and (max-width:610px)
+    @content   
+@mixin celular-md
+  @media screen and (max-width:480px)
+    @content         
+@mixin celular-xs
+  @media screen and (max-width:320px)
+    @content  
+       
+/*PLACEHOLDERS*/
+%p-absolute
+  position: absolute
+%p-relative
+  position: relative 
+%p-fixed
+  position: fixed     
+%flex-box
+  display: flex
+  flex-flow: row
+%width-height
+  height:100%
+  width:100%
+%back-roxo
+  background: #6C1CFA  
+%color-branco
+  color: #fff 
+%color-roxo
+  color: #6C1CFA   
+%back-transparent
+  background: transparent   
+%pointer
+  cursor: pointer  
+%bree-serif
+  font-family: 'Bree Serif'
+%moteserrat
+  font-family: 'Montserrat', sans-serif
+
+@import "header"  
+@import "sidemenu"  
+@import "carousel"  
+@import "sobre"  
+@import "body"  
+
+
+     
+
+
+
